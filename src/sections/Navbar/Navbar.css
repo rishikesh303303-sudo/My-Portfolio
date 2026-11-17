@@ -1,0 +1,160 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 4%;
+  font-family: var(--font-sans);
+}
+
+/* LEFT: logo + naam, clay chip */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.35rem 1rem 0.35rem 0.35rem;
+  border-radius: 40px;
+  text-decoration: none;
+  color: var(--ink);
+  background: linear-gradient(160deg, #fffdf6 0%, #f4efdc 100%);
+  box-shadow:
+    inset 4px 4px 8px rgba(255, 255, 255, 0.9),
+    inset -4px -4px 8px rgba(120, 110, 80, 0.12),
+    6px 8px 16px rgba(60, 55, 30, 0.14);
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.nav-brand:hover {
+  transform: translateY(-2px);
+}
+
+.nav-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(160deg, #2a2d55 0%, var(--navy) 100%);
+  box-shadow:
+    inset 2px 2px 4px rgba(255, 255, 255, 0.15),
+    inset -3px -3px 6px rgba(0, 0, 0, 0.3),
+    3px 4px 8px rgba(31, 33, 64, 0.3);
+}
+
+.nav-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* CENTER/RIGHT: links, ek bada clay pill */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-left: auto;
+  margin-right: 1.2rem;
+  padding: 0.6rem 1.6rem;
+  border-radius: 40px;
+  background: linear-gradient(160deg, #fffdf6 0%, #f4efdc 100%);
+  box-shadow:
+    inset 5px 5px 10px rgba(255, 255, 255, 0.9),
+    inset -5px -5px 10px rgba(120, 110, 80, 0.1),
+    8px 10px 20px rgba(60, 55, 30, 0.14);
+}
+
+.nav-links a {
+  font-size: 0.88rem;
+  color: var(--ink);
+  text-decoration: none;
+  position: relative;
+  padding: 0.2rem 0;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--navy);
+  transition: width 0.25s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* FAR RIGHT: clay menu button */
+.nav-toggle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: linear-gradient(160deg, #2a2d55 0%, var(--navy) 100%);
+  box-shadow:
+    inset 3px 3px 6px rgba(255, 255, 255, 0.12),
+    inset -4px -4px 8px rgba(0, 0, 0, 0.3),
+    6px 8px 16px rgba(31, 33, 64, 0.3);
+  transition: transform 0.2s;
+}
+
+.nav-toggle:hover {
+  transform: translateY(-2px);
+}
+
+.nav-toggle span {
+  width: 16px;
+  height: 1.5px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* Mobile: links hide, button se khulenge */
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 4%;
+    margin: 0.6rem 0 0;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    padding: 1.4rem 1.8rem;
+    border-radius: 28px;
+    background: linear-gradient(160deg, #fffdf6 0%, #f4efdc 100%);
+    box-shadow:
+      inset 6px 6px 12px rgba(255, 255, 255, 0.9),
+      inset -6px -6px 12px rgba(120, 110, 80, 0.1),
+      10px 14px 28px rgba(60, 55, 30, 0.16);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}
+
+@media (min-width: 901px) {
+  .nav-toggle {
+    display: none;
+  }
+}

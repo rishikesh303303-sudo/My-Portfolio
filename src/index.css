@@ -1,0 +1,53 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap");
+
+:root {
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Instrument Serif", serif;
+  --ink: #111111;
+  --muted: #8a8a8a;
+  --navy: #1f2140;
+  --cream: #faf8ef;
+  --line: #dcd9cc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAVBAR */
+.nav {
+  position: fixed;
+  top: 1.2rem;
+  right: 8%;
+  z-index: 10;
+  display: flex;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  backdrop-filter: blur(8px);
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.85rem;
+}
+
+.nav a:hover {
+  opacity: 0.6;
+}

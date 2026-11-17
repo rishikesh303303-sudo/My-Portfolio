@@ -1,0 +1,174 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 20%, #fff8d9 0%, transparent 45%),
+    var(--cream);
+}
+
+/* Bada dim naam background mein */
+.hero-watermark {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  font-family: var(--font-sans);
+  font-size: 16.5vw;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: #000;
+  opacity: 0.05;
+  white-space: nowrap;
+  text-align: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Character: bilkul center mein, neeche se chipka hua */
+.hero-character {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: clamp(280px, 28vw, 420px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Video sirf frames ke liye, screen par nahi */
+.hero-video-src {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Text bottom-left corner mein */
+.hero-text {
+  position: absolute;
+  left: 4%;
+  bottom: 12%;
+  z-index: 2;
+  max-width: 30%;
+}
+
+.hero-eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+}
+
+/* Headline: do lines mein */
+.hero-text h1 {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(3.2rem, 6.5vw, 6.5rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  text-align: left;
+}
+
+.hero-line {
+  display: block;
+  white-space: nowrap;
+}
+
+.hero-tagline {
+  margin-top: 1.4rem;
+  color: #555;
+  font-size: 1.05rem;
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+/* MOBILE: text neeche, character upar */
+@media (max-width: 900px) {
+  .hero-watermark {
+    font-size: 19vw;
+    top: 8%;
+  }
+  .hero-character {
+    position: relative;
+    left: auto;
+    transform: none;
+    margin: 6rem auto 0;
+    width: 260px;
+  }
+  .hero-text {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    max-width: 100%;
+    padding: 2rem 6% 4rem;
+    text-align: center;
+  }
+  .hero-text h1 {
+    align-items: center;
+    font-size: clamp(2.8rem, 12vw, 4rem);
+  }
+  .hero-tagline {
+    margin-inline: auto;
+  }
+}
+/* CONTROLS: character ke right side par */
+.hero-controls {
+  position: absolute;
+  right: -64px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  pointer-events: auto;
+}
+
+.clay-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--navy);
+  background: linear-gradient(160deg, #fffdf6 0%, #f4efdc 100%);
+  box-shadow:
+    inset 4px 4px 8px rgba(255, 255, 255, 0.9),
+    inset -4px -4px 8px rgba(120, 110, 80, 0.12),
+    6px 8px 16px rgba(60, 55, 30, 0.14);
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.clay-btn:hover {
+  transform: translateY(-2px);
+}
+
+.clay-btn:active {
+  transform: translateY(1px);
+  box-shadow:
+    inset 6px 6px 12px rgba(120, 110, 80, 0.15),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+}
+
+/* MOBILE: controls character ke neeche */
+@media (max-width: 900px) {
+  .hero-controls {
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: -70px;
+    transform: translateX(-50%);
+    flex-direction: row;
+  }
+}
